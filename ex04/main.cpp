@@ -6,7 +6,7 @@
 /*   By: ycardona <ycardona@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 10:29:53 by ycardona          #+#    #+#             */
-/*   Updated: 2023/08/28 12:12:58 by ycardona         ###   ########.fr       */
+/*   Updated: 2023/08/28 12:21:02 by ycardona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int main(int argc, char *argv[])
 	std::ofstream outputFile(name + ".replace");
 	std::ifstream inputFile;
 
-    inputFile.open(argv[1]);
-    if (inputFile.is_open() && outputFile.is_open()) 
-	{    
+	inputFile.open(argv[1]);
+	if (inputFile.is_open() && outputFile.is_open()) 
+	{
 		while (inputFile.get(c))
 			fileContents += c;
 		while ((found = fileContents.find(s1)) !=std::string::npos)
@@ -39,5 +39,5 @@ int main(int argc, char *argv[])
 		inputFile.close();
 		outputFile.close();
 	}
-    return 0;
+	return 0;
 }
