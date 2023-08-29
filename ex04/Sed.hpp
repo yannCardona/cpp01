@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ycardona <ycardona@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/27 14:24:12 by ycardona          #+#    #+#             */
-/*   Updated: 2023/08/27 15:34:12 by ycardona         ###   ########.fr       */
+/*   Created: 2023/08/28 21:43:29 by ycardona          #+#    #+#             */
+/*   Updated: 2023/08/28 22:37:25 by ycardona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#ifndef SED_H
+# define SED_H
 
-# include <string>
-# include <iostream>
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <sstream>
 
-class Zombie
+class Sed
 {
 public:
-	Zombie(std::string name);
-	~Zombie(void);
-
-	static Zombie* newZombie(std::string name);
-	static void randomChump(std::string name);
-	
-	void announce(void) const;
+	Sed(std::string fname, std::string s1, std::string s2);
+	~Sed(void);
+	//void	open(std::string fname);
+	void	replace(void);
 
 private:
-	std::string _name;
+	//std::ifstream _inputFile;
+	//std::ofstream *_outputFile;
+	std::string _fname;
+	std::string _s1;
+	std::string _s2;
 };
 
 #endif

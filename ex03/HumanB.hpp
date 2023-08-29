@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ycardona <ycardona@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/27 14:24:12 by ycardona          #+#    #+#             */
-/*   Updated: 2023/08/27 15:34:12 by ycardona         ###   ########.fr       */
+/*   Created: 2023/08/27 19:24:16 by ycardona          #+#    #+#             */
+/*   Updated: 2023/08/28 10:17:21 by ycardona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#ifndef HUMANB_H
+# define HUMANB_H
 
-# include <string>
-# include <iostream>
+#include "Weapon.hpp"
 
-class Zombie
+class HumanB
 {
 public:
-	Zombie(std::string name);
-	~Zombie(void);
-
-	static Zombie* newZombie(std::string name);
-	static void randomChump(std::string name);
-	
-	void announce(void) const;
+	HumanB(std::string name);
+	~HumanB(void);
+	void	attack(void) const;
+	void	setWeapon(Weapon &weapon);
 
 private:
 	std::string _name;
+	Weapon *_weapon;
 };
 
 #endif
