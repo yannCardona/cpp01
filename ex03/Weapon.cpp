@@ -6,7 +6,7 @@
 /*   By: ycardona <ycardona@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:30:06 by ycardona          #+#    #+#             */
-/*   Updated: 2023/08/27 19:19:10 by ycardona         ###   ########.fr       */
+/*   Updated: 2023/08/30 12:57:33 by ycardona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ void	Weapon::setType(std::string type)
 }
 
 const std::string	&Weapon::getType(void)
-{
+{		
 	return (this->_type);
 }

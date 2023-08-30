@@ -6,7 +6,7 @@
 /*   By: ycardona <ycardona@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 10:29:53 by ycardona          #+#    #+#             */
-/*   Updated: 2023/08/30 10:52:26 by ycardona         ###   ########.fr       */
+/*   Updated: 2023/08/30 13:40:16 by ycardona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
 /* void	printFile(std::string fname)
 {
-	std::ifstream inputFile(fname);
+	std::ifstream inputFile(fname.c_str());
 	std::cout << inputFile.rdbuf();
 	inputFile.close();
 }
@@ -73,4 +73,5 @@ int main(void)
 	test4.replace("bbb", "xxx");
 	printFile("tests/test4.replace");
 	std::cout << std::endl << "___________________________" << std::endl << std::endl;
-} */
+}
+ */

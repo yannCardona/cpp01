@@ -6,15 +6,16 @@
 /*   By: ycardona <ycardona@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 21:48:04 by ycardona          #+#    #+#             */
-/*   Updated: 2023/08/30 10:47:37 by ycardona         ###   ########.fr       */
+/*   Updated: 2023/08/30 13:37:21 by ycardona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
 
-Sed::Sed(std::string fname) : _fname(fname)
+Sed::Sed(std::string ifname) : _ifname(ifname)
 {
-	this->_inputFile.open(fname);
+	this->_inputFile.open(ifname.c_str());
+	this->_ofname = this->_ifname + ".replace";
 	return ;
 }
 
@@ -25,13 +26,14 @@ Sed::~Sed()
 
 void	Sed::replace(std::string s1, std::string s2)
 {
+	std::ofstream outputFile;
 	std::string fileContents;
 	std::ostringstream oss;
 	std::size_t found;
 
 	if (this->_inputFile.is_open()) 
 	{
-		std::ofstream outputFile(this->_fname + ".replace");
+		outputFile.open(this->_ofname.c_str());
 		if (outputFile.is_open())
 		{
 			oss << this->_inputFile.rdbuf();
