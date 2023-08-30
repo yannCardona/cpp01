@@ -6,7 +6,7 @@
 /*   By: ycardona <ycardona@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 21:43:29 by ycardona          #+#    #+#             */
-/*   Updated: 2023/08/28 22:37:25 by ycardona         ###   ########.fr       */
+/*   Updated: 2023/08/30 10:39:34 by ycardona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,14 @@
 class Sed
 {
 public:
-	Sed(std::string fname, std::string s1, std::string s2);
+	Sed(std::string fname);
 	~Sed(void);
-	//void	open(std::string fname);
-	void	replace(void);
+
+	void	replace(std::string s1, std::string s2);
 
 private:
-	//std::ifstream _inputFile;
-	//std::ofstream *_outputFile;
-	std::string _fname;
-	std::string _s1;
-	std::string _s2;
+	std::string		_fname;
+	std::ifstream	_inputFile;
 };
 
 #endif
